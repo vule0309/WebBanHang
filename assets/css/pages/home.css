@@ -1,0 +1,23 @@
+/* ===== HOME PAGE ===== */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.featured-products,
+.why-choose-us {
+    padding: 60px 0;
+    background-color: white;
+}

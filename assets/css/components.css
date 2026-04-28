@@ -1,0 +1,320 @@
+/* ===== NAVIGATION ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 8px;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background-color: var(--color-dark);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.is-open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.navigation {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.navigation.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu li a {
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: var(--color-primary);
+    background-color: #ecf0f1;
+}
+
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+    z-index: 900;
+}
+
+body.nav-open .nav-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+    display: inline-block;
+    background-color: #fff;
+    color: #667eea;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #2980b9;
+}
+
+/* ===== CARDS & GRIDS ===== */
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: var(--color-dark);
+}
+
+.page-title {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-title h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    font-size: 18px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.product-image {
+    height: 250px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--color-muted);
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--color-dark);
+}
+
+.product-price {
+    color: #e74c3c;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 30px;
+    background: var(--color-soft);
+    border-radius: var(--radius-md);
+    transition: transform 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--color-dark);
+}
+
+.feature-item p {
+    color: var(--color-muted);
+}
+
+/* ===== BLOG ===== */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.blog-image {
+    height: 250px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--color-muted);
+}
+
+.blog-content {
+    padding: 25px;
+}
+
+.blog-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: var(--color-muted);
+}
+
+.blog-category {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 3px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.blog-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--color-dark);
+}
+
+.blog-content p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    color: var(--color-primary);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #2980b9;
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.contact-form button {
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+}

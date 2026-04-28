@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cửa hàng điện thoại - Bán điện thoại chính hãng">
     <title>Trang Chủ - Cửa Hàng Điện Thoại</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages/home.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <script src="assets/js/menu.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
 </head>
 <body>
     <!-- Header và Navigation -->
@@ -15,16 +21,13 @@
                 <div class="logo">
                     <h1>📱 PhoneStore</h1>
                 </div>
+                <button class="hamburger" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Mo menu" data-menu-toggle>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 
-                <!-- Hamburger Menu Toggle (chỉ hiện trên mobile) -->
-                <input type="checkbox" id="menu-toggle" class="menu-toggle">
-                <label for="menu-toggle" class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-                
-                <nav class="navigation">
+                <nav class="navigation" id="site-nav">
                     <ul class="nav-menu">
                         <li><a href="index.html" class="active">Trang Chủ</a></li>
                         <li><a href="sanpham.html">Sản Phẩm</a></li>
@@ -35,6 +38,7 @@
             </div>
         </div>
     </header>
+    <div class="nav-overlay" data-nav-overlay></div>
 
     <!-- Banner Chính -->
     <section class="hero-section">
