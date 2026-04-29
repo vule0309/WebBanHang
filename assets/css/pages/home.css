@@ -21,3 +21,13 @@
     padding: 60px 0;
     background-color: white;
 }
+
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+}

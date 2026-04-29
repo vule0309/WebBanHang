@@ -280,6 +280,57 @@ body.nav-open .nav-overlay {
     color: #2980b9;
 }
 
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        z-index: 999;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid #ecf0f1;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .page-title h2 {
+        font-size: 32px;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ===== CONTACT FORM ===== */
 .contact-form {
     display: flex;

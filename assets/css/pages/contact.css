@@ -91,3 +91,10 @@
     font-size: 18px;
     color: var(--color-muted);
 }
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
