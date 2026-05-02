@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sản phẩm điện thoại chính hãng">
+    <title>Sản Phẩm - Cửa Hàng Điện Thoại</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages/products.css">
+    <script src="assets/js/menu.js" defer></script>
+    <script src="assets/js/products.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+    <!-- Header và Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>📱 PhoneStore</h1>
+                </div>
+                <button class="hamburger" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Mo menu" data-menu-toggle>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <nav class="navigation" id="site-nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="sanpham.html" class="active">Sản Phẩm</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="lienhe.html">Liên Hệ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="nav-overlay" data-nav-overlay></div>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h2>Sản Phẩm Của Chúng Tôi</h2>
+            <p>Tất cả điện thoại chính hãng với giá tốt nhất</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active">Tất Cả</button>
+                <button class="filter-btn">iPhone</button>
+                <button class="filter-btn">Samsung</button>
+                <button class="filter-btn">Xiaomi</button>
+                <button class="filter-btn">OPPO</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <p data-product-status></p>
+            <div class="product-grid" data-product-grid></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Về Chúng Tôi</h3>
+                    <p>Cửa hàng điện thoại uy tín, chuyên cung cấp các sản phẩm điện thoại chính hãng.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Kết</h3>
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="sanpham.html">Sản Phẩm</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="lienhe.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Hệ</h3>
+                    <p>📞 Hotline: 1900-xxxx</p>
+                    <p>📧 Email: contact@phonestore.com</p>
+                    <p>📍 Địa chỉ: Hà Nội, Việt Nam</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PhoneStore. Bản quyền thuộc về PhoneStore.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
