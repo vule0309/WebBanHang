@@ -1,6 +1,3 @@
-const productGrid = document.querySelector("[data-product-grid]");
-const productStatus = document.querySelector("[data-product-status]");
-
 const formatPrice = (value) => {
     if (typeof value !== "number") {
         return value;
@@ -9,11 +6,9 @@ const formatPrice = (value) => {
     return value.toLocaleString("vi-VN") + "đ";
 };
 
-const apiBaseUrl = "http://localhost:3000";
-
 const resolveImageUrl = (value) => {
     if (!value) {
-        return `${apiBaseUrl}/images/placeholder.jpg`;
+        return `${window.api.API_BASE_URL}/images/placeholder.jpg`;
     }
 
     if (value.startsWith("http://") || value.startsWith("https://")) {
@@ -21,35 +16,36 @@ const resolveImageUrl = (value) => {
     }
 
     if (value.startsWith("/")) {
-        return `${apiBaseUrl}${value}`;
+        return `${window.api.API_BASE_URL}${value}`;
     }
 
-    return `${apiBaseUrl}/${value}`;
+    return `${window.api.API_BASE_URL}/${value}`;
 };
 
-const renderProducts = (products) => {
-    if (!productGrid) {
+const renderProductCards = ({ products, container, showBadge = false }) => {
+    if (!container) {
         return;
     }
 
     if (!products.length) {
-        productGrid.innerHTML = "<p>Hien chua co san pham nao.</p>";
+        container.innerHTML = "<p>Hien chua co san pham nao.</p>";
         return;
     }
 
-    productGrid.innerHTML = products
+    container.innerHTML = products
         .map((product) => {
             const imageUrl = resolveImageUrl(product.image_url);
             const description = product.description || "";
 
             return `
                 <div class="product-card">
+                    ${showBadge ? "<div class=\"product-badge featured\">Noi bat</div>" : ""}
                     <div class="product-image">
                         <img src="${imageUrl}" alt="${product.name}">
                     </div>
                     <div class="product-info">
                         <h3>${product.name}</h3>
-                        <p class="product-desc">${description}</p>
+                        ${description ? `<p class=\"product-desc\">${description}</p>` : ""}
                         <p class="product-price">${formatPrice(product.price)}</p>
                         <a href="#" class="btn-secondary">Xem Chi Tiet</a>
                     </div>
@@ -59,27 +55,6 @@ const renderProducts = (products) => {
         .join("");
 };
 
-const loadProducts = async () => {
-    if (productStatus) {
-        productStatus.textContent = "Dang tai san pham...";
-    }
-
-    try {
-        const response = await fetch("http://localhost:3000/products");
-        const data = await response.json();
-
-        renderProducts(Array.isArray(data) ? data : []);
-
-        if (productStatus) {
-            productStatus.textContent = "";
-        }
-    } catch (error) {
-        if (productStatus) {
-            productStatus.textContent = "Khong the tai san pham. Vui long thu lai.";
-        }
-
-        console.error(error);
-    }
+window.ui = {
+    renderProductCards
 };
-
-loadProducts();

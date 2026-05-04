@@ -1,2 +1,4 @@
-// Entry file for page-specific scripts.
-// Keep this file so we can add more features later.
+// Entry file for shared initialization.
+if (window.components && typeof window.components.initMenu === "function") {
+	window.components.initMenu();
+}
