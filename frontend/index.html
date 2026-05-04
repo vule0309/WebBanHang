@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/pages/home.css">
     <script src="assets/js/menu.js" defer></script>
+    <script src="assets/js/home.js" defer></script>
     <script src="assets/js/main.js" defer></script>
 </head>
 <body>
@@ -54,56 +55,8 @@
     <section class="featured-products">
         <div class="container">
             <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
-            <div class="product-grid">
-                <!-- Sản phẩm 1 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/phone1.jpg" alt="iPhone 15 Pro Max">
-                    </div>
-                    <div class="product-info">
-                        <h3>iPhone 15 Pro Max</h3>
-                        <p class="product-price">29.990.000đ</p>
-                        <a href="#" class="btn-secondary">Xem Chi Tiết</a>
-                    </div>
-                </div>
-
-                <!-- Sản phẩm 2 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/phone2.jpg" alt="Samsung Galaxy S24 Ultra">
-                    </div>
-                    <div class="product-info">
-                        <h3>Samsung Galaxy S24 Ultra</h3>
-                        <p class="product-price">27.990.000đ</p>
-                        <a href="#" class="btn-secondary">Xem Chi Tiết</a>
-                    </div>
-                </div>
-
-                <!-- Sản phẩm 3 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/phone3.jpg" alt="Xiaomi 14 Ultra">
-                    </div>
-                    <div class="product-info">
-                        <h3>Xiaomi 14 Ultra</h3>
-                        <p class="product-price">19.990.000đ</p>
-                        <a href="#" class="btn-secondary">Xem Chi Tiết</a>
-                    </div>
-                </div>
-
-                <!-- Sản phẩm 4 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/phone4.jpg" alt="OPPO Find X7">
-                    </div>
-                    <div class="product-info">
-                        <h3>OPPO Find X7</h3>
-                        <p class="product-price">16.990.000đ</p>
-                        <a href="#" class="btn-secondary">Xem Chi Tiết</a>
-                    </div>
-                </div>
-               
-            </div>
+            <p data-featured-status></p>
+            <div class="product-grid" data-featured-grid></div>
         </div>
     </section>
 
