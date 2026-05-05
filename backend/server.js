@@ -1,7 +1,12 @@
-const express = require("express");
-const path = require("path");
-const { connectDatabase } = require("./src/config/db");
-const productRoutes = require("./src/routes/products");
+import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+import { connectDatabase } from "./src/config/db.js";
+import productRoutes from "./src/routes/products.js";
+
+// __dirname không tồn tại trong ESM — phải tự tạo lại
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 

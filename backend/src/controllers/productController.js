@@ -1,6 +1,6 @@
-const { db } = require("../config/db");
+import { db } from "../config/db.js";
 
-const getProducts = (req, res) => {
+export const getProducts = (req, res) => {
   const isFeatured = req.query.featured === "1";
   const limit = Number.parseInt(req.query.limit, 10);
   const safeLimit = Number.isNaN(limit) ? 12 : Math.min(Math.max(limit, 1), 24);
@@ -21,8 +21,4 @@ const getProducts = (req, res) => {
     if (err) return res.status(500).json(err);
     res.json(results);
   });
-};
-
-module.exports = {
-  getProducts
 };

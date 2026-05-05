@@ -1,14 +1,14 @@
-const mysql = require("mysql2");
-require("dotenv").config();
+import mysql from "mysql2";
+import "dotenv/config";
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  database: process.env.DB_NAME
+  database: process.env.DB_NAME,
 });
 
-const connectDatabase = () => {
+export const connectDatabase = () => {
   db.connect((err) => {
     if (err) {
       console.error("Ket noi loi:", err);
@@ -18,7 +18,4 @@ const connectDatabase = () => {
   });
 };
 
-module.exports = {
-  db,
-  connectDatabase
-};
+export { db };

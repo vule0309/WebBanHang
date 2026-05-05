@@ -1,4 +1,6 @@
-const formatPrice = (value) => {
+import { API_BASE_URL } from "./api.js";
+
+export const formatPrice = (value) => {
     if (typeof value !== "number") {
         return value;
     }
@@ -6,9 +8,9 @@ const formatPrice = (value) => {
     return value.toLocaleString("vi-VN") + "đ";
 };
 
-const resolveImageUrl = (value) => {
+export const resolveImageUrl = (value) => {
     if (!value) {
-        return `${window.api.API_BASE_URL}/images/placeholder.jpg`;
+        return `${API_BASE_URL}/images/placeholder.jpg`;
     }
 
     if (value.startsWith("http://") || value.startsWith("https://")) {
@@ -16,13 +18,13 @@ const resolveImageUrl = (value) => {
     }
 
     if (value.startsWith("/")) {
-        return `${window.api.API_BASE_URL}${value}`;
+        return `${API_BASE_URL}${value}`;
     }
 
-    return `${window.api.API_BASE_URL}/${value}`;
+    return `${API_BASE_URL}/${value}`;
 };
 
-const renderProductCards = ({ products, container, showBadge = false }) => {
+export const renderProductCards = ({ products, container, showBadge = false }) => {
     if (!container) {
         return;
     }
@@ -45,7 +47,7 @@ const renderProductCards = ({ products, container, showBadge = false }) => {
                     </div>
                     <div class="product-info">
                         <h3>${product.name}</h3>
-                        ${description ? `<p class=\"product-desc\">${description}</p>` : ""}
+                        ${description ? `<p class="product-desc">${description}</p>` : ""}
                         <p class="product-price">${formatPrice(product.price)}</p>
                         <a href="#" class="btn-secondary">Xem Chi Tiet</a>
                     </div>
@@ -53,8 +55,4 @@ const renderProductCards = ({ products, container, showBadge = false }) => {
             `;
         })
         .join("");
-};
-
-window.ui = {
-    renderProductCards
 };

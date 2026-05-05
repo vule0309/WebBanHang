@@ -1,7 +1,9 @@
-const initMenu = () => {
-    const menuToggle = window.dom.qs("[data-menu-toggle]");
-    const navigation = window.dom.qs("#site-nav");
-    const navOverlay = window.dom.qs("[data-nav-overlay]");
+import { qs, qsa } from "../utils/dom.js";
+
+export const initMenu = () => {
+    const menuToggle = qs("[data-menu-toggle]");
+    const navigation = qs("#site-nav");
+    const navOverlay = qs("[data-nav-overlay]");
 
     if (!menuToggle || !navigation) {
         return;
@@ -23,7 +25,7 @@ const initMenu = () => {
         navOverlay.addEventListener("click", () => setMenuState(false));
     }
 
-    window.dom.qsa("a", navigation).forEach((link) => {
+    qsa("a", navigation).forEach((link) => {
         link.addEventListener("click", () => setMenuState(false));
     });
 
@@ -39,6 +41,3 @@ const initMenu = () => {
         }
     });
 };
-
-window.components = window.components || {};
-window.components.initMenu = initMenu;

@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:3000";
+export const API_BASE_URL = "http://localhost:3000";
 
 const buildUrl = (path, params = {}) => {
     const query = new URLSearchParams(params);
@@ -17,7 +17,7 @@ const fetchJson = async (url) => {
     return response.json();
 };
 
-const fetchProducts = async ({ featured = false, limit = 12 } = {}) => {
+export const fetchProducts = async ({ featured = false, limit = 12 } = {}) => {
     const params = {};
 
     if (featured) {
@@ -32,9 +32,4 @@ const fetchProducts = async ({ featured = false, limit = 12 } = {}) => {
     const data = await fetchJson(url);
 
     return Array.isArray(data) ? data : [];
-};
-
-window.api = {
-    fetchProducts,
-    API_BASE_URL
 };

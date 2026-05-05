@@ -1,3 +1,6 @@
+import { fetchProducts } from "../api.js";
+import { renderProductCards } from "../ui.js";
+
 const featuredGrid = document.querySelector("[data-featured-grid]");
 const featuredStatus = document.querySelector("[data-featured-status]");
 
@@ -7,8 +10,8 @@ const loadFeaturedProducts = async () => {
     }
 
     try {
-        const products = await window.api.fetchProducts({ featured: true, limit: 4 });
-        window.ui.renderProductCards({
+        const products = await fetchProducts({ featured: true, limit: 4 });
+        renderProductCards({
             products,
             container: featuredGrid,
             showBadge: true

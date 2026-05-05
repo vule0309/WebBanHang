@@ -1,3 +1,6 @@
+import { fetchProducts } from "../api.js";
+import { renderProductCards } from "../ui.js";
+
 const productGrid = document.querySelector("[data-product-grid]");
 const productStatus = document.querySelector("[data-product-status]");
 
@@ -7,8 +10,8 @@ const loadProducts = async () => {
     }
 
     try {
-        const products = await window.api.fetchProducts({ limit: 12 });
-        window.ui.renderProductCards({
+        const products = await fetchProducts({ limit: 12 });
+        renderProductCards({
             products,
             container: productGrid
         });
